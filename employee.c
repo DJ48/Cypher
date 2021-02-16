@@ -13,6 +13,7 @@ char name[50];
 };
 
 int main()
+  int d_id,dindex,f2;
 
 {
 
@@ -33,6 +34,44 @@ for (int i = 0; i < 3; i++) {
 printf("%s\t",employees[i].id);
 
 printf("%s\n",employees[i].name);
+
+}
+printf ("Enter the id that you want to delete:");
+
+scanf ("%s", &d_id);
+
+for (int i = 0; i < 3; i++)
+{
+
+if (strcmp (d_id, employees[i].id) == 0)
+{
+
+dindex = i;
+f2=1;
+
+}
+
+}
+if(f2==0){
+printf("\nEmployee id %s not found.",d_id);
+}
+else{
+for (int i = dindex; i < 3; i++)
+{
+
+if (i == 2)
+{
+
+strcpy (employees[i].id, "\0");
+
+strcpy (employees[i].name, "\0");
+
+}
+
+else
+{
+
+employees[i] = employees[i + 1];
 
 }
 
