@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <stdio.h>
 #include <string.h>
 #include<stdlib.h>
@@ -62,7 +54,72 @@ int main()
             printf ("%s\n", employees[i].name);
         }
     }
- 
-return 0;
-}
+  int f2,dindex;
+  char d_id[10];
+  printf ("Enter the id that you want to delete:");
+  scanf ("%s", &d_id);
+  
+  for (int i = 0; i < 3; i++)
+  {
+    if (strcmp (d_id, employees[i].id) == 0)
+    {
+      dindex = i;
+      f2=1;
+    }
+  }
+  
+  if(f2==0)
+  {
+    printf("\nEmployee id %s not found.",d_id);
+  }
+  else
+  {
+    for (int i = dindex; i < 3; i++)
+    {
+        if (i == 2)
+        {
+            strcpy (employees[i].id, "\0");
+            strcpy (employees[i].name, "\0");
+        }
+        else
+        {
+            employees[i] = employees[i + 1];
+        }
+    }
+    printf ("\n---------Printing Details After Deletion-------\n");
+  
+    for (int i = 0; i < 3; i++)
+    {
+      printf ("%s\t", employees[i].id);
+      printf ("%s\n", employees[i].name);
+    }
+  }
+  
+  
+    int flag,sindex;
+    char sid[10];
+    printf ("Enter employe id to search \n");
+    scanf ("%s", sid);
+    
+    for (int i = 0; i < 3; i++)
+    {
+        if (strcmp (sid, employees[i].id) == 0)
+        {
+            flag = 1;
+            sindex = i;
+            break;
+        }
+        
+    }
+    
+    if (flag == 1)
+    {
+        printf ("Employee Found \n");
+        printf ("%s\t", employees[sindex].id);
+        printf ("%s\n", employees[sindex].name);
+    }
+    else
+        printf ("Employee with id %s not found \n", sid);
 
+  return 0;
+}
