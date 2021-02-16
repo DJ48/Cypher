@@ -26,10 +26,10 @@ int main()
         printf("%s\n",employees[i].name);
     }
 
-    int f3;
+    int f3=0;
     char u_id[10];
     printf ("Enter the Employee id that you want to update:-");
-    scanf ("%s", &u_id);
+    scanf ("%s", u_id);
     for (int i = 0; i < 3; i++)
     {
         if (strcmp (u_id, employees[i].id) == 0)
@@ -54,10 +54,10 @@ int main()
             printf ("%s\n", employees[i].name);
         }
     }
-  int f2,dindex;
+  int f2=0,dindex;
   char d_id[10];
   printf ("Enter the id that you want to delete:");
-  scanf ("%s", &d_id);
+  scanf ("%s", d_id);
   
   for (int i = 0; i < 3; i++)
   {
@@ -96,7 +96,7 @@ int main()
   }
   
   
-    int flag,sindex;
+    int flag=0,sindex;
     char sid[10];
     printf ("Enter employe id to search \n");
     scanf ("%s", sid);
