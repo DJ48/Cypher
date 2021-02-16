@@ -13,10 +13,12 @@ char name[50];
 };
 
 int main()
-  int d_id,dindex,f2;
+  
 
 {
 
+int dindex,f2;
+char d_id[10]
 struct emp employees[3]; // struct emp vs emp1
 
 printf("Enter 3 employee records id and name \n");
@@ -42,16 +44,17 @@ scanf ("%s", &d_id);
 
 for (int i = 0; i < 3; i++)
 {
-
-if (strcmp (d_id, employees[i].id) == 0)
+printf("Drebug");
+if (strcmp(d_id, employees[i].id) == 0)
 {
 
 dindex = i;
 f2=1;
-
+break;
 }
 
 }
+printf("%d",dindex);
 if(f2==0){
 printf("\nEmployee id %s not found.",d_id);
 }
@@ -77,4 +80,6 @@ employees[i] = employees[i + 1];
 
 return 0;
 
+}
+}
 }
