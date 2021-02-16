@@ -8,7 +8,7 @@ struct emp // new user defined datatype
 
 char id[10];
 
-char name[30];
+char name[50];
 
 };
 
